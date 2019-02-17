@@ -2,6 +2,7 @@
 # and outputs the sum of all numbers between one and that number.
 
 # First attempt. Coding help from "Coder's Apprentice"
+# Should I go backwards  with a while loop like in week 4's video? My code seems to work the way it is but is it the best way?
 
 # Ask user for input
 i = int(input("Please enter a positive integer: "))
