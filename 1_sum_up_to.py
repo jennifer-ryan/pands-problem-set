@@ -11,6 +11,7 @@ i = int(input("Please enter a positive integer: "))
 # IF/ELSE? 
 # .isnumeric? .isalpha?g
 # if type(i) = str or float? 
+# A while loop that only breaks when a positive int is entered? (see https://stackoverflow.com/questions/39855326/how-to-ask-a-string-again-if-the-wrong-answer-is-entered)
 
 # Trying with a for loop
 # need i + 1 to include the user input as a range() function takes you up to but does not include the second number

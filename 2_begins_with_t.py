@@ -2,6 +2,8 @@
 
 # indexing?
 # similar to tuesday.py from week 1?
+# Only days that begin with T are Tuesday (index 1) and Thursday (index 3)
+# So if either are True, print the "Yes..." string
 
 import datetime
 
