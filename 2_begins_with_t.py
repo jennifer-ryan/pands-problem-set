@@ -5,6 +5,7 @@
 # Only days that begin with T are Tuesday (index 1) and Thursday (index 3)
 # So if either are True, print the "Yes..." string
 
+
 import datetime
 
 if (datetime.datetime.today().weekday() == 1) or (datetime.datetime.today().weekday() == 3):
