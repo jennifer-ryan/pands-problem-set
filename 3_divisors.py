@@ -1,6 +1,6 @@
 # Write a program that prints all numbers between 1,000 and 10,000 that are divisible by 6 but not 12.
 
-# range() up to 10001 to include 10000
+# range() up to 10001 to include 10000 
 
 # for loop with modulo 
 # Two conditions need to be true for each number:
