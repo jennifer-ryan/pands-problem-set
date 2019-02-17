@@ -3,9 +3,11 @@
 
 # Possible to index each word by dividing the sentence according to the space between them?
 # can use the split() functions for this. If no parameter entered, whitespace is used
-# does not account for punctuation, which will be considered part of the word - need to figure this out
+# does not account for punctuation, which will be considered part of the word - need to figure this out (check out string.punctuation constant)
 # split() should create a list of words that can be iterated through
 # use a for loop and modulo. I want indexes 0, 2, 4, 6, etc. if modulo is 0, amend the new sentence with the words
+# List prints but could it be fixed by simply adding str() when printing? Doesn't work
+# use the .join() method instead. Separate each item on the list by a space(" ") to create a string
 
 sentence = input("Please enter a sentence: ")
 
@@ -20,6 +22,7 @@ for w in words:
         new_sentence.append(w)
     index += 1
 
-print(new_sentence)        
+output = " ".join(new_sentence)
 
+print(output)
 
