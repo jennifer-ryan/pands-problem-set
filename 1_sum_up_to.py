@@ -10,7 +10,7 @@ i = int(input("Please enter a positive integer: "))
 # FIGURE THIS OUT. 
 # IF/ELSE? 
 # .isnumeric? .isalpha?g
-# if type(i) = str or float? 
+# if type(i) = str or float?  
 # A while loop that only breaks when a positive int is entered? (see https://stackoverflow.com/questions/39855326/how-to-ask-a-string-again-if-the-wrong-answer-is-entered)
 
 # Trying with a for loop
