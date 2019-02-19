@@ -5,15 +5,27 @@
 # Should I go backwards  with a while loop like in week 4's video? My code seems to work the way it is but is it the best way?
 
 # Ask user for input
-i = int(input("Please enter a positive integer: "))
-
-# ensure i is a positive integer only (not a negative integer, a float or a string)
-# FIGURE THIS OUT. 
-# IF/ELSE? 
-# .isnumeric? .isalpha?g
-# if type(i) = str or float?  
+# Ensure it is not a float or a string. 
+# IF/ELSE? <- does not work
+# if type(i) = str or float? <- does not work (ValueError)
 # A while loop that only breaks when a positive int is entered? (see https://stackoverflow.com/questions/39855326/how-to-ask-a-string-again-if-the-wrong-answer-is-entered)
+# keep getting ValueErrors for the above attempts
+
 # is it possible to use a module for this such as pcinput.py from coders apprentice? Input is required for several of the problems.
+# try exception handling to manage float/string input 
+# I can get the below to work for the first wrong input (string or float) but get a ValueError for the second wrong input (unless it's a negative integer)
+# 
+try: 
+    i = int(input("Please enter a positive integer: "))
+except ValueError:
+    print("That is not an integer. Please try again.")
+    i = int(input("Please enter a positive integer: "))
+
+# ensure i is a positive integer only (not a negative integer)
+if i < 0:
+    print("That is not a positive integer. Please try again.")
+    i = int(input("Please enter a positive integer: "))
+
 
 # Trying with a for loop
 # need i + 1 to include the user input as a range() function takes you up to but does not include the second number
