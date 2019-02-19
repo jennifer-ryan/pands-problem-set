@@ -11,6 +11,7 @@ from datetime import datetime
 
 day = datetime.today().weekday()
 d = ""
+
 if day == 0:
     d = "Monday,"
 elif day == 1:
@@ -29,6 +30,7 @@ elif day == 6:
 
 month = datetime.today().month  
 m = ""
+
 if month == 1:
     m = "January"
 elif month == 2:
@@ -55,6 +57,32 @@ elif month == 12:
     m = "December"
 
 
+# started with a lot of elif statements like above but changed it to a for loop with a range to cover all dates. 
+# suffixes st, nd, and rd dealt with first and all others should (hopefully) fall into the else statement for th
+
+date = datetime.today().day
+dte = ""
+
+for x in range(1, 32):
+    x = date
+    if date == 1 or date == 21 or date == 31:
+        dte = str(date) + "st"
+    elif date == 2 or date == 22:
+        dte = str(date) + "nd"
+    elif date == 3 or date == 23:
+        dte = str(date) + "rd"
+    else:
+        dte = str(date) + "th"             
+
+year = datetime.today().year
 
 
-print(d, m)
+# example does not use 24hr clock - check modules for am/pm options
+hour = datetime.today().hour
+hr = ""
+
+for h in range(13, 24):
+    h = hour
+    hr = h - 12
+
+print(d, m, dte, year, "at", hr)
