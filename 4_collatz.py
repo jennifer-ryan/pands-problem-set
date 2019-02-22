@@ -5,11 +5,11 @@
 # Have the program end if the current value is one.
 
 # First attempt:
-# Will just using "while i > 1" suffice to stop the code at 1?
+# Will just using "while i > 1" suffice to stop the code at 1? - was not aware of collatz conjecture until Skype chat 20.02.19. Since the sequence will always end at one, this while function should suffice.
 # if loop for each condition
 # Need to print i to show first number
 # Need to add int before printing i each time to get rid of decimal point
-# Results printing one on top of the other unlike example output - SHOULD I MAKE THIS A LIST?
+# Results printing one on top of the other unlike example output - SHOULD I MAKE THIS A LIST? str() does not work.
 # Still need to test for input other than an integer!
 
 
