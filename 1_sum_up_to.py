@@ -1,35 +1,23 @@
-# Write a program that asks the user to input any positive integer
-# and outputs the sum of all numbers between one and that number.
+# Write a program that asks the user to input any positive integer outputs the sum of all numbers between one and that number.
 
-# First attempt. Coding help from "Coder's Apprentice"
-# Should I go backwards  with a while loop like in week 4's video? My code seems to work the way it is but is it the best way?
+# import getInteger function from pcinput.py to ensure input is an integer. Set value to variable i.
+from pcinput import getInteger
 
-# Ask user for input
-# Ensure it is not a float or a string. 
-# IF/ELSE? <- does not work
-# if type(i) = str or float? <- does not work (ValueError)
-# A while loop that only breaks when a positive int is entered? (see https://stackoverflow.com/questions/39855326/how-to-ask-a-string-again-if-the-wrong-answer-is-entered)
-# keep getting ValueErrors for the above attempts
+i = getInteger("Please enter a positive integer: ")
 
-# is it possible to use a module for this such as pcinput.py from coders apprentice? Input is required for several of the problems.
-# try exception handling to manage float/string input 
-# I can get the below to work for the first wrong input (string or float) but get a ValueError for the second wrong input (unless it's a negative integer)
-# 
-try: 
-    i = int(input("Please enter a positive integer: "))
-except ValueError:
-    print("That is not an integer. Please try again.")
-    i = int(input("Please enter a positive integer: "))
-
-# ensure i is a positive integer only (not a negative integer)
-if i < 0:
+# getInteger does not check for negative numbers. i needs to be a positive integer only.
+# A while loop that only breaks when a positive int is entered? 
+# got help from https://stackoverflow.com/questions/39855326/how-to-ask-a-string-again-if-the-wrong-answer-is-entered)
+# asks user to input again if number is negative. 
+# Is it bad code to have a second input prompt rather than trying to start the program again?
+while i < 1:
     print("That is not a positive integer. Please try again.")
-    i = int(input("Please enter a positive integer: "))
+    i = getInteger("Please enter a positive integer: ")
 
 
-# Trying with a for loop
-# need i + 1 to include the user input as a range() function takes you up to but does not include the second number
-# start with answer as zero then work through each iteration
+# Using a for loop
+# need range from 1 to i + 1 in order to include the user input as the range() function takes you up to but does not include the second number.
+# set variable answer to zero then work through each iteration, adding to answer at end of each loop
 # 0 + 1 - answer becomes 1
 # 1 + 2 - answer becomes 3
 # 3 + 3 - answer becomes 6
@@ -39,6 +27,6 @@ answer = 0
 for num in range(1, i + 1):
     answer += num
     
-
+# print answer to console.
 print(answer)
     
