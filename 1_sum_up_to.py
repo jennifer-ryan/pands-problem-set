@@ -12,6 +12,7 @@ i = getInteger("Please enter a positive integer: ")
 # Is it bad code to have a second input prompt rather than trying to start the program again?
 while i < 1:
     print("That is not a positive integer. Please try again.")
+    print(" ")
     i = getInteger("Please enter a positive integer: ")
 
 
