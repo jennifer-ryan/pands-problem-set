@@ -85,4 +85,7 @@ for h in range(13, 24):
     h = hour
     hr = h - 12
 
-print(d, m, dte, year, "at", hr)
+minute = datetime.today().minute
+
+
+print(d, m, dte, year, "at", str(hr) + ":" + str(minute))
