@@ -14,13 +14,19 @@
 
 
 i = int(input("Please enter a positive integer: "))
-print(i)
+num_list = [i]
 
 while i > 1:
     if i % 2 == 0:
         i = i/2
-        print(int(i))
+        num_list.append(int(i))
     elif i % 2 == 1:
         i = (i * 3) + 1
-        print(int(i))
+        num_list.append(int(i))
 
+
+# To allow the numbers to print as shown in the example answer 
+# i.e. in a row without the brackets and commas of a printed list 
+# I used a variation of the following answer from stack overflow: https://stackoverflow.com/a/17757544
+# Only the asterisk operator is needed
+print (*num_list)
