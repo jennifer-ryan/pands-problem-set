@@ -9,6 +9,8 @@
 
 from datetime import datetime
 
+# Day. On datetime 0 = Monday, 1 = Tuesday, 2 = Wednesday, etc. 
+# Converted each to a string in variable d and added comma
 day = datetime.today().weekday()
 d = ""
 
@@ -28,6 +30,7 @@ elif day == 6:
     d = "Sunday,"                    
 
 
+# Month. Same technique as above. Can't figure out a more efficient way of doing this.
 month = datetime.today().month  
 m = ""
 
@@ -57,9 +60,10 @@ elif month == 12:
     m = "December"
 
 
-# started with a lot of elif statements like above but changed it to a for loop with a range to cover all dates. 
-# suffixes st, nd, and rd dealt with first and all others should (hopefully) fall into the else statement for th
-
+# started with a lot of elif statements like above but changed it to a for loop with a range to cover all dates.
+# concatenated dates with suffixes 
+# suffixes st (for 1, 21 and 31), nd (for 2 and 22), and rd (for 3 and 23) dealt with first.
+# all others should (hopefully) fall into the else statement containing th
 date = datetime.today().day
 dte = ""
 
@@ -74,9 +78,10 @@ for x in range(1, 32):
     else:
         dte = str(date) + "th"             
 
+# Year
 year = datetime.today().year
 
-
+# Hour - 12 hour clock
 # example does not use 24hr clock - check modules for am/pm options
 hour = datetime.today().hour
 hr = ""
@@ -85,7 +90,17 @@ for h in range(13, 24):
     h = hour
     hr = h - 12
 
+# Minute
 minute = datetime.today().minute
 
+# To add a.m. or p.m. to the end of the string.
+# create variable min, which convert minute to string format 
+# Between the hours of 00:00 to 11:59, it should add a.m. All other times should add p.m. 
+# Need to test this at different times
+min = str(minute)
+if hour in range(0, 12):
+    min += "a.m."
+else:
+    min += "p.m."
 
-print(d, m, dte, year, "at", str(hr) + ":" + str(minute))
+print(d, m, dte, year, "at", str(hr) + ":" + min)
