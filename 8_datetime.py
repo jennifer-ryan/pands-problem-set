@@ -91,13 +91,18 @@ for h in range(13, 24):
     hr = h - 12
 
 # Minute
+# just realised single digit minutes print as 3:5 instead of 3:05
+# added an if statement to concatenate 0 to minutes under 10.
 minute = datetime.today().minute
+min = str(minute)
+
+if minute in range(0, 10):
+    min = "0" + min
 
 # To add a.m. or p.m. to the end of the string.
-# create variable min, which convert minute to string format 
 # Between the hours of 00:00 to 11:59, it should add a.m. All other times should add p.m. 
 # Need to test this at different times
-min = str(minute)
+
 if hour in range(0, 12):
     min += "a.m."
 else:
