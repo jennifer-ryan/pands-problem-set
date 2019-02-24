@@ -5,7 +5,7 @@
 # datetime.now() prints year-month-day-time
 # should I create functions for each part? tried on first commit
 # maybe I don't need functions
-# day and month done. Is there an easier way though??
+# day and month - Is there an easier way though??
 
 from datetime import datetime
 
@@ -83,12 +83,14 @@ year = datetime.today().year
 
 # Hour - 12 hour clock
 # example does not use 24hr clock - check modules for am/pm options
+# changed for loop to if/else it wasn't working for a.m.
 hour = datetime.today().hour
 hr = ""
 
-for h in range(13, 24):
-    h = hour
-    hr = h - 12
+if hour in range(13, 24):
+    hr = hour - 12
+else: 
+    hr = hour
 
 # Minute
 # just realised single digit minutes print as 3:5 instead of 3:05
@@ -107,5 +109,6 @@ if hour in range(0, 12):
     min += "a.m."
 else:
     min += "p.m."
+
 
 print(d, m, dte, year, "at", str(hr) + ":" + min)
