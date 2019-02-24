@@ -10,9 +10,8 @@ i = getInteger("Please enter a positive integer: ")
 # got help from https://stackoverflow.com/questions/39855326/how-to-ask-a-string-again-if-the-wrong-answer-is-entered)
 # asks user to input again if number is negative. 
 # Is it bad code to have a second input prompt rather than trying to start the program again?
-while i < 1:
-    print("That is not a positive integer. Please try again.")
-    print(" ")
+while i < 0:
+    print("That is not a positive integer -- please try again.")
     i = getInteger("Please enter a positive integer: ")
 
 
