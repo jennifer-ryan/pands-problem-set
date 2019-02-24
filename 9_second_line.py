@@ -13,9 +13,21 @@
 txt_file = "C:\\Users\\Jennifer Ryan\\Desktop\\Daffodils.txt"
 
 # how to open a file
-open_file = open(txt_file, "r+")
+f = open(txt_file, "r+")
 
-text = open_file.read()
+# using .readlines() method to access lines https://stackoverflow.com/a/42040147
+# looks like it creates a list with each line as a separate item on the list
+# indexing to get every second line? 
+lines = f.readlines()
 
-print(text)
+# for loop - range starts at 1, ends with the number of lines in the text and does it in increments of 2.
+# Does not start at first line though
+# i is the index of each line in lines and every second one should print to console
+# prints every second line but does not start at first line and also counts blank lines.
+for i in range(1, len(lines), 2):
+    print (lines[i])
+
+# holding the below - may not be needed
+# text = open_file.read()
+# print(lines)
 
