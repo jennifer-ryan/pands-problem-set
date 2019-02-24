@@ -12,9 +12,18 @@
 # Results printing one on top of the other unlike example output - SHOULD I MAKE THIS A LIST? str() does not work.
 # Still need to test for input other than an integer!
 
+# import getInteger to get user input and ensure i is positive.
+from pcinput import getInteger
 
-i = int(input("Please enter a positive integer: "))
+i = getInteger("Please enter a positive integer: ")
+
+while i < 0:
+    print("That is not a positive integer -- please try again.")
+    i = getInteger("Please enter a positive integer: ")
+
+# i added to list num_list, which will contain the sequence of numbers for the final output.
 num_list = [i]
+
 
 while i > 1:
     if i % 2 == 0:
