@@ -2,7 +2,7 @@
 
 
 ## Description:
-This repository contains my solutions to ten problems that comprise part of my first assessment in Python programming for the Higer Diploma on Data Analytics with Galway-Mayo Institute of Technology. 
+This repository contains my solutions to ten problems that comprise part of my first assessment in Python programming for the Higher Diploma on Data Analytics with Galway-Mayo Institute of Technology. 
 
 
 ## How to Download the Repository:
@@ -32,7 +32,9 @@ The getString function uses the *.strip()* method to remove leading and trailing
 
 ### 1_sum_up_to.py
 This program asks the user to enter a positive integer and outputs the sum of all numbers between one and that number.
-* I used the function getInteger from the module pcinput.py to get the user input.
+* Import **getInteger** from **pcinput.py**.
+* Ask user to enter a positive integer using **getInteger**. Set to variable i.
+* A **while loop** ensures the integer is positive.
 * The variable **answer** is created and set to zero.
 * A **for loop** is used with a **range() function** to iterate through all numbers between one and the user input, adding each number to **answer** until it reaches the last number.
 * Once the loop is complete, **answer** is printed.
@@ -44,8 +46,8 @@ This program determines whether today is a day that begins with the letter 'T'.
 * **if/else statements** and the keyword **or** are used. If today is Tuesday (weekday index 1) **or** Thursday (weekday index 3), the output will read "Yes - today begins with a T". Otherwise the output will read "No - today does not begin with T".
 
 ### 3_divisors.py
-A program that prints all numbers between 1,000 and 10,000 that are divisible by 6 but not by 12.
-* A **for loop** along with the **modulus operator** are used to iterate through each number in the **range()** provided.
+This program prints all numbers between 1,000 and 10,000 that are divisible by 6 but not by 12.
+* A **for loop** along with the **modulo operator** are used to iterate through each number in the **range()** provided.
 * Two conditions need to be true for this program to work as intended: 
     * The remainder when each number is divided by 6 must be 0.
     * The remainder when each number is divided by 12 must not be 0.
@@ -53,6 +55,16 @@ A program that prints all numbers between 1,000 and 10,000 that are divisible by
 * The program only prints the numbers that meet both conditions.
 
 ### 4_collatz.py
+This program asks the user to input any positive integer and outputs the successive values of the following calculation: At each step calculate the next value by taking the current value and, if it is even, divide it by two, but if it is odd, multiply it by three and add one. The program ends when the current value is 1.
+* Import **getInteger** from **pcinput.py**.
+* Ask user to enter a positive integer using **getInteger**. Set to variable i.
+* A **while loop** ensures the integer is positive.
+* **List** num_list is created and variable i is stored there. A list will help generate the desired output, i.e. numbers printed in a row rather than as a column.
+* The program goes through the required calculation with a **while loop** along with **if/elif statements** and **modulo operators**:
+    * The condition in the while loop (while i > 1) is based on the collatz conjecture, which states that the sequence of numbers that result from the above calculation will always end at 1, no matter the value of i. Thus, once the while loop reaches 1, the program ends.
+    * The if statement checks whether the value of i is an even number, i.e. the modulo of i divided by 2 should be 0. If it is, i is divided by 2 and added to num_list.
+    The elif statement checks whether the value of i is an odd number, i.e. the modulo of i divided by 2 should be 1. If it is, i is multiplied by 3 and 1 is added to it. This number is then added to num_list.
+    * The final result is printed to the console using the **asterisk operator**, which removes the brackets and commas that are generated when a list is printed.
 
 ### 5_primes.py
 
