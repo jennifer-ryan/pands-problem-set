@@ -9,27 +9,27 @@
 from datetime import datetime
 
 # Day. On datetime 0 = Monday, 1 = Tuesday, 2 = Wednesday, etc. 
-# Converted each to a string in variable d and added comma
+# Converted each number to a string in variable d.
 day = datetime.today().weekday()
 d = ""
 
 if day == 0:
-    d = "Monday,"
+    d = "Monday"
 elif day == 1:
-    d = "Tuesday,"
+    d = "Tuesday"
 elif day == 2:
-    d = "Wednesday,"
+    d = "Wednesday"
 elif day == 3:
-    d = "Thursday,"
+    d = "Thursday"
 elif day == 4:
-    d = "Friday,"
+    d = "Friday"
 elif day == 5:
-    d = "Saturday,"
+    d = "Saturday"
 elif day == 6:
-    d = "Sunday,"                    
+    d = "Sunday"                    
 
 
-# Month. Same technique as above. Can't figure out a more efficient way of doing this.
+# Month. Same technique as above. 
 month = datetime.today().month  
 m = ""
 
@@ -59,23 +59,21 @@ elif month == 12:
     m = "December"
 
 
-# started with a lot of elif statements like above but changed it to a for loop with a range to cover all dates.
+# started with a lot of elif statements like above but changed it to a for loop with a range to cover all dates - unecessary. if/elif should suffice
 # concatenated dates with suffixes 
 # suffixes st (for 1, 21 and 31), nd (for 2 and 22), and rd (for 3 and 23) dealt with first.
 # all others should (hopefully) fall into the else statement containing th
 date = datetime.today().day
 dte = ""
 
-for x in range(1, 32):
-    x = date
-    if date == 1 or date == 21 or date == 31:
-        dte = str(date) + "st"
-    elif date == 2 or date == 22:
-        dte = str(date) + "nd"
-    elif date == 3 or date == 23:
-        dte = str(date) + "rd"
-    else:
-        dte = str(date) + "th"             
+if date == 1 or date == 21 or date == 31:
+    dte = str(date) + "st"
+elif date == 2 or date == 22:
+    dte = str(date) + "nd"
+elif date == 3 or date == 23:
+    dte = str(date) + "rd"
+else:
+    dte = str(date) + "th"             
 
 # Year
 year = datetime.today().year
@@ -111,4 +109,4 @@ else:
     min += "pm"
 
 
-print(d, m, dte, year, "at", str(hr) + ":" + min)
+print(d + ", " + m, dte, year, "at", str(hr) + ":" + min)
