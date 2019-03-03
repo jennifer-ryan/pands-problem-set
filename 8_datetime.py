@@ -106,9 +106,9 @@ if minute in range(0, 10):
 # transition from am to pm works. Need to check pm to am
 
 if hour in range(0, 12):
-    min += "a.m."
+    min += "am"
 else:
-    min += "p.m."
+    min += "pm"
 
 
 print(d, m, dte, year, "at", str(hr) + ":" + min)
