@@ -5,7 +5,6 @@
 # datetime.now() prints year-month-day-time
 # should I create functions for each part? tried on first commit
 # maybe I don't need functions
-# day and month - Is there an easier way though??
 
 from datetime import datetime
 
@@ -104,6 +103,7 @@ if minute in range(0, 10):
 # To add a.m. or p.m. to the end of the string.
 # Between the hours of 00:00 to 11:59, it should add a.m. All other times should add p.m. 
 # Need to test this at different times
+# transition from am to pm works. Need to check pm to am
 
 if hour in range(0, 12):
     min += "a.m."
