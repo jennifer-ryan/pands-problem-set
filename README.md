@@ -67,6 +67,13 @@ This program asks the user to input any positive integer and outputs the success
     * The final result is printed to the console using the **asterisk operator**, which removes the brackets and commas that are generated when a list is printed.
 
 ### 5_primes.py
+This program asks the user to input a positive integer and tells the user whether or not the number is a prime.
+* Import **getInteger** from **pcinput.py**.
+* Ask user to enter a positive integer using **getInteger**. Set to variable i.
+* Account for numbers less than or equal to 1. GO BACK TO THIS
+* The variable not_prime is created to track the result of the following for loop.
+* A **for loop** is used to iterate through all numbers in the **range()** from 2 to i and checks whether each number in the range divides into i with a remainder or not. If the **modulo** of a division is ever equals to zero, then 1 is added to the variable not_prime.
+* An **if/else statement** is used to determine the final output. If not_prime is greater than zero, that means a divisor other than 1 and itself has been found for the variable i, meaning it is not a prime number. Otherwise, the number is prime. 
 
 ### 6_second_string.py
 
