@@ -34,7 +34,7 @@ The getString function uses the *.strip()* method to remove leading and trailing
 This program asks the user to enter a positive integer and outputs the sum of all numbers between one and that number.
 * Import **getInteger** from **pcinput.py**.
 * Ask user to enter a positive integer using **getInteger**. Set to variable *i*.
-* A **while loop** ensures the integer is positive.
+* A **while loop** ensures that *i*  is positive.
 * The variable *answer* is created and set to zero.
 * A **for loop** is used with a **range() function** to iterate through all numbers between one and the user input, *i*,  adding each number to *answer* until it reaches the last number.
 * Once the loop is complete, *answer* is printed.
@@ -58,7 +58,7 @@ This program prints all numbers between 1,000 and 10,000 that are divisible by 6
 This program asks the user to input any positive integer and outputs the successive values of the following calculation: At each step calculate the next value by taking the current value and, if it is even, divide it by two, but if it is odd, multiply it by three and add one. The program ends when the current value is 1.
 * Import **getInteger** from **pcinput.py**.
 * Ask user to enter a positive integer using **getInteger**. Set to variable *i*.
-* A **while loop** ensures the integer is positive.
+* A **while loop** ensures that *i* is positive.
 * A **list** is created called *num_list* and variable *i* is stored there. A list will help generate the desired output, i.e. numbers printed in a row rather than as a column.
 * The program goes through the required calculation with a **while loop** along with **if/elif statements** and **modulo operators**:
     * The condition in the while loop (while *i* > 1) is based on the collatz conjecture, which states that the sequence of numbers that result from the above calculation will always end at 1, no matter the value of *i*. Thus, once the while loop reaches 1, the program ends.
@@ -86,8 +86,24 @@ This program takes a user input string and returns every second word.
 * *string_sentence* contains punctuation as part of each word. In order to remove punctuation, a **for loop** is used to iterate through each character in *string_sentence*. The **string.punctuation constant** is used to determine whether a character is considered punctuation. If it is not, the character is added to the empty variable *final_sentence*, which is then printed to the console.
 
 ### 7_square_root.py
+This program asks the user to enter a positive floating number and returns an approximation of the square root.
+* Import **sqrt** function from **math** module and **getFloat** function from **pcinput.py** module.
+* Ask user to enter a positive number using **getFloat**. Set to variable *i*.
+* A **while loop** ensures that *i* is positive.
+* The square root of *i* is calculated using the **sqrt()** function and rounded to 1 decimal place using the **round()** function. This is saved under variable *s*.
+* In order to account for square roots that are integers rather than floats, there are 2 output options. An **if/else statement** is used to determine whether *s* is the same number as a float and as an integer. If it is, the output prints "The square root if i is s.". Otherwise it prints "The square root of i is approximately s." 
 
 ### 8_datetime.py
+This program outputs today's date and time in the format: "Sunday, March 3rd 2019 at 1:40pm".
+* **datetime** imported from **datetime** to determine today's date. 
+* Day: **datetime.today().weekday()** provides the day of the week and this is saved to variable *day*. This encodes each day as a number between 0 and 6. **if/elif statements** are used to convert the weekday number to a string which is saved to variable *d*.
+* Month: **datetime.today().month** provides the month and this is saved to variable *month*. This encodes each month as a number between 1 and 12. **if/elif statements** are used to convert the month number to a string which is saved to variable *m*.
+* Date: **datetime.today().day** provides the date and this is saved to the variable *date*. In order to get each date with the appropriate suffix for the string (st, nd, rd, th), **if.elif statements** are used wo determine the appropriate suffix for each number. The date is converted to a string and concatenated to the suffix and saved as variable *dte*.
+* Year: **datetime.today().year** provides the year directly. This s saved to the variable *year*.
+* Hour: **datetime.today().hour** provides the hour portion of the time in 24 hour format and this is saved to the variable *hour*. The output requires 12 hour format so an **if/else statement** is used to convert the hours in the **range()** 13:00 to 23:00 inclusive into 12 hour format by subtracting 12. Hours outside of this range remain unchanged. This is saved as a string in the variable *hr*.0
+* Minute: **datetime.today().minute** provides the minutes portion of the time and is saved to the variable *minute*. An **if statement** addresses minutes in the **range() 0 to 9 inclusive and concatenates a zero in front as these are originally returned as single digits. Minutes are saved in string format in the variable *min*. 
+* AM/PM: In order to add am and pm to the time, an **if/else statement** is used and if the *hour* portion of the time is in the **range()** 0 to 11 inclusive, the suffix am is concatenated to the *min* variable. Otherwise the suffix pm is concatenated. 
+* The final print statement joins all of the variables created and punctuation into a string.  
 
 ### 9_second_line.py
 
