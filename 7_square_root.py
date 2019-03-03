@@ -3,7 +3,7 @@
 
 # first attempt - see what happens when I just do it the way that seems most straightforward.
 # import square root function from math module
-# add float before input
+# use getFloat from pcinput.py
 # format s so there is only 1 decimal place like in example? round()
 # how to add full-stop to end like in example? Change s to string format and concatenate.
 
@@ -13,7 +13,13 @@
 
 from math import sqrt
 
-i = float(input("Please enter a number: "))
+from pcinput import getFloat
+
+i = getFloat("Please enter a positive number: ")
+
+while i < 0:
+    print("That is not a positive number -- please try again.")
+    i = getFloat("Please enter a positive number: ")
 
 s = round(sqrt(i), 1)
 
