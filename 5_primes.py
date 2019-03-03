@@ -13,22 +13,24 @@
 # after the for loop is complete, if not_prime is greater than 0, that means a divisor has been found that is not 1 or i and the number is not prime
 # if not_prime remains at zero, the number is prime
 
-# still don't know how to restart the program in number less than 1 is entered - tried to reuse the while loops from previous exercises
-# but if 1 is entered after 0, it does not revisit previous loop and returns 1 as a prime number 
 
 from pcinput import getInteger
 
 i = getInteger("Please enter a positive integer: ")
 
-# mathematically a prime number is a number greater than 1. 1 itself is not a prime number
-while i == 1:
-    print("This is not a prime number.")
-    i = getInteger("Please enter a positive integer: ")
 
-# i needs to be greater than 1
-while i < 1:
-    print("That is not a positive integer -- please try again.")
-    i = getInteger("Please enter a positive integer: ")
+# still don't know how to restart the program in number less than 1 is entered - tried to reuse the while loops from previous exercises
+# but if 1 is entered after 0, it does not revisit previous loop and returns 1 as a prime number 
+# Just use one while loop with an if statement within?
+# mathematically a prime number is a number greater than 1. 1 itself is not a prime number. Output such and end the program
+# if i is less than 1 - prompt user again
+while i <= 1:
+    if i == 1:
+        print("This is not a prime number.")
+        exit()
+    else:
+        print("That is not a positive integer -- please try again.")
+        i = getInteger("Please enter a positive integer: ")
 
 
 not_prime = 0
