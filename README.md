@@ -108,6 +108,13 @@ This program outputs today's date and time in the format: "Sunday, March 3rd 201
 ### 9_second_line.py
 
 ### 10_plot.py
+This program displays a plot of the functions x, x^2 and 2^x in the range [0, 4].
+* **matplotlib.pyplot** imported (as plt) to plot and create the graph.
+* **List** *x* created with range [0, 4].
+* **List** *y1* created and set equal to variable *x*.
+* **Lists** *y2* and *y3* created using **for loops** to iterate through each value of x and apply the calculations x^2 and 2^x respectively.
+* The function **plt.plot** is used to create each plot using the x values and various y values. 
+* The graph is displayed using the function **plt.show()**.
 
 # References
 Spronck, P. (2016) [*The Coder's Apprentice*](http://spronck.net/pythonbook/pythonbook.pdf)
