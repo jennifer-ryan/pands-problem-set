@@ -12,20 +12,30 @@
 # Below will be string user input eventually
 txt_file = "C:\\Users\\Jennifer Ryan\\Desktop\\Daffodils.txt"
 
-# how to open a file
-f = open(txt_file, "r+")
+# how to open a file using help from https://stackoverflow.com/a/40647980 / https://cmdlinetips.com/2018/01/3-ways-to-read-a-file-and-skip-initial-comments-in-python/ to get rid of empty lines
+# does not work. lines is not a list or a string? Needs keyboard interrupt.
+with open(txt_file, "r+") as f:
+    while True:
+        lines = f.readlines()
+        for l in lines:
+            if not l.startswith("    "):
+                break
+            else:
+                for i in range(1, len(lines), 2):
+                    print (lines[i])
+            
+
 
 # using .readlines() method to access lines https://stackoverflow.com/a/42040147
 # looks like it creates a list with each line as a separate item on the list
 # indexing to get every second line? 
-lines = f.readlines()
+
 
 # for loop - range starts at 1, ends with the number of lines in the text and does it in increments of 2.
 # Does not start at first line though
 # i is the index of each line in lines and every second one should print to console
-# prints every second line but does not start at first line and also counts blank lines.
-for i in range(1, len(lines), 2):
-    print (lines[i])
+# prints every second line but does not start at first line and also counts blank lines - help from https://stackoverflow.com/a/40647980.
+
 
 # holding the below - may not be needed
 # text = open_file.read()
