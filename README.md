@@ -106,6 +106,13 @@ This program outputs today's date and time in the format: "Sunday, March 3rd 201
 * The final print statement joins all of the variables created and punctuation into a string.  
 
 ### 9_second_line.py
+This program reads in a text file and outputs every second line.
+* The user is asked to enter the name of a text file. This is saved as the variable *txt_file*.
+* File is opened using **open()** and saved to the variable *f*.
+* To access each individual line, the **readlines()** method is used. This creates a list that contains each line as a separate item in the list, allowing the program to iterate through them later. This list is named *lines*.
+* To remove empty lines, a **for loop** iterates through each item in *lines* and an **if statement** removes any blank lines from the list.
+* To return every second line of the text file, a **for loop** is used to access the index of every second item in *lines*. The loop iterates through a range from 0 up to the number of items in *lines* in increments of 2. These lines are then printed to the console.
+* The file is closed using **close()**.
 
 ### 10_plot.py
 This program displays a plot of the functions x, x^2 and 2^x in the range [0, 4].
@@ -125,6 +132,9 @@ Spronck, P. (2016) [*The Coder's Apprentice*](http://spronck.net/pythonbook/pyth
 
 [Stack Overflow](https://stackoverflow.com/)
 * Used for more specific help with particular problems.
+
+[YouTube](https://www.youtube.com/)
+* Used for various tutorial videos.
 
 https://github.com/ianmcloughlin/python-tuesday
 * Used as model for *2_begins_with_t.py*
