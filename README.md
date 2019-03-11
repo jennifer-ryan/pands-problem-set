@@ -23,7 +23,7 @@ This module is called [pcinput.py](http://www.spronck.net/pythonbook/). To downl
 
 This module contains four functions that ensure the input entered by the user is of the correct data type. For this problem set, I have altered pcinput.py as I only require the first three: getFloat, getInteger and getString. 
 
-The getFloat and getInteger functions work through exception handling, utilising the *try* and *except* clauses. If the user input is of the desired data type, i.e. the *try* portion of the code, then there should be no error that requires the *except* clause to launch. If the user enters input that is incorrect, the subsequent ValueError will trigger the *except clause, which will prompt the user to try again.
+The getFloat and getInteger functions work through exception handling, utilising the *try* and *except* clauses. If the user input is of the desired data type, i.e. the *try* portion of the code, then there should be no error that requires the *except* clause to launch. If the user enters input that is incorrect, the subsequent ValueError will trigger the *except* clause, which will prompt the user to try again.
 
 The getString function uses the *.strip()* method to remove leading and trailing spaces from the user input.
 
@@ -36,7 +36,7 @@ This program asks the user to enter a positive integer and outputs the sum of al
 * Ask user to enter a positive integer using **getInteger**. Set to variable *i*.
 * A **while loop** ensures that *i*  is positive.
 * The variable *answer* is created and set to zero.
-* A **for loop** is used with a **range() function** to iterate through all numbers between one and the user input, *i*,  adding each number to *answer* until it reaches the last number.
+* A **for loop** is used with a **range() function** to iterate through all numbers between one and the user input, *i*,  adding each number to *answer* until it reaches the last number in the range.
 * Once the loop is complete, *answer* is printed.
 
 ### 2_begins_with_t.py
@@ -96,18 +96,19 @@ This program asks the user to enter a positive floating number and returns an ap
 ### 8_datetime.py
 This program outputs today's date and time in the format: "Sunday, March 3rd 2019 at 1:40pm".
 * **datetime** imported from **datetime** to determine today's date. 
-* Day: **datetime.today().weekday()** provides the day of the week and this is saved to variable *day*. This encodes each day as a number between 0 and 6. **if/elif statements** are used to convert the weekday number to a string which is saved to variable *d*.
-* Month: **datetime.today().month** provides the month and this is saved to variable *month*. This encodes each month as a number between 1 and 12. **if/elif statements** are used to convert the month number to a string which is saved to variable *m*.
+* Day: **datetime.today().weekday()** provides the day of the week and this is saved to variable *day*. This encodes each day as a number between 0 and 6. **if/elif statements** are used to convert the weekday number (0, 1, 2...) to a string (Monday, Tuesday, Wedneday...) which is saved to variable *d*.
+* Month: **datetime.today().month** provides the month and this is saved to variable *month*. This encodes each month as a number between 1 and 12. **if/elif statements** are used to convert the month number (1, 2, 3...) to a string statement (January, February, March...) which is saved to variable *m*.
 * Date: **datetime.today().day** provides the date and this is saved to the variable *date*. In order to get each date with the appropriate suffix for the string (st, nd, rd, th), **if.elif statements** are used wo determine the appropriate suffix for each number. The date is converted to a string and concatenated to the suffix and saved as variable *dte*.
 * Year: **datetime.today().year** provides the year directly. This s saved to the variable *year*.
-* Hour: **datetime.today().hour** provides the hour portion of the time in 24 hour format and this is saved to the variable *hour*. The output requires 12 hour format so an **if/else statement** is used to convert the hours in the **range()** 13:00 to 23:00 inclusive into 12 hour format by subtracting 12. Hours outside of this range remain unchanged. This is saved as a string in the variable *hr*.0
-* Minute: **datetime.today().minute** provides the minutes portion of the time and is saved to the variable *minute*. An **if statement** addresses minutes in the **range() 0 to 9 inclusive and concatenates a zero in front as these are originally returned as single digits. Minutes are saved in string format in the variable *min*. 
+* Hour: **datetime.today().hour** provides the hour portion of the time in 24 hour format and this is saved to the variable *hour*. The output requires 12 hour format so an **if/else statement** is used to convert the hours in the **range()** 13:00 to 23:00 inclusive into 12 hour format by subtracting 12. Hours outside of this range remain unchanged. This is saved as a string in the variable *hr*.
+* Minute: **datetime.today().minute** provides the minutes portion of the time and is saved to the variable *minute*. An **if statement** addresses minutes in the **range()** 0 to 9 inclusive and concatenates a zero in front as these are originally returned as single digits. Minutes are saved in string format in the variable *min*. 
 * AM/PM: In order to add am and pm to the time, an **if/else statement** is used and if the *hour* portion of the time is in the **range()** 0 to 11 inclusive, the suffix am is concatenated to the *min* variable. Otherwise the suffix pm is concatenated. 
 * The final print statement joins all of the variables created and punctuation into a string.  
 
 ### 9_second_line.py
 This program reads in a text file and outputs every second line.
 * The user is asked to enter the name of a text file. This is saved as the variable *txt_file*.
+* The text file *daffodils.txt* has been included in the repository to test this code.
 * File is opened using **open()** and saved to the variable *f*.
 * To access each individual line, the **readlines()** method is used. This creates a list that contains each line as a separate item in the list, allowing the program to iterate through them later. This list is named *lines*.
 * To remove empty lines, a **for loop** iterates through each item in *lines* and an **if statement** removes any blank lines from the list.
@@ -115,11 +116,11 @@ This program reads in a text file and outputs every second line.
 * The file is closed using **close()**.
 
 ### 10_plot.py
-This program displays a plot of the functions x, x^2 and 2^x in the range [0, 4].
+This program displays a plot of the functions x, x<sup>2</sup> and 2<sup>x</sup> in the range [0, 4].
 * **matplotlib.pyplot** imported (as plt) to plot and create the graph.
 * **List** *x* created with range [0, 4].
 * **List** *y1* created and set equal to variable *x*.
-* **Lists** *y2* and *y3* created using **for loops** to iterate through each value of x and apply the calculations x^2 and 2^x respectively.
+* **Lists** *y2* and *y3* created using **for loops** to iterate through each value of x and apply the calculations x<sup>2</sup> and 2<sup>x</sup> respectively.
 * The function **plt.plot** is used to create each plot using the x values and various y values. 
 * The graph is displayed using the function **plt.show()**.
 
