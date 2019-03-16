@@ -83,11 +83,11 @@ else:
 # Minute
 minute = datetime.today().minute
 min = str(minute)
-
+# single digit minutes need a 0 prefix
 if minute in range(0, 10):
-    min = "0" + min     # single digit minutes need a 0 prefix
+    min = "0" + min     
 
-# Adds a.m. or p.m. to the end of the string.
+# Adds am or pm to the end of the string.
 if hour in range(0, 12):
     min += "am"
 else:
