@@ -1,11 +1,7 @@
 # Write a program that outputs today’s date and time in the format 
 # "Monday, January 10th 2019 at 1:15pm".
 
-# testing out datetime module
-# datetime.now() prints year-month-day-time
-# should I create functions for each part? tried on first commit
-# maybe I don't need functions
-
+# Import datetime to get access to date and time
 from datetime import datetime
 
 # Day. On datetime 0 = Monday, 1 = Tuesday, 2 = Wednesday, etc. 
@@ -58,16 +54,13 @@ elif month == 11:
 elif month == 12:
     m = "December"
 
-
-# started with a lot of elif statements like above but changed it to a for loop with a range to cover all dates - unecessary. if/elif should suffice
-# concatenated dates with suffixes 
-# suffixes st (for 1, 21 and 31), nd (for 2 and 22), and rd (for 3 and 23) dealt with first.
-# all others should (hopefully) fall into the else statement containing th
+# Date
+# Each date concatenated with appropriate suffixes 
 date = datetime.today().day
 dte = ""
 
 if date == 1 or date == 21 or date == 31:
-    dte = str(date) + "st"
+    dte = str(date) + "st"  
 elif date == 2 or date == 22:
     dte = str(date) + "nd"
 elif date == 3 or date == 23:
@@ -78,9 +71,7 @@ else:
 # Year
 year = datetime.today().year
 
-# Hour - 12 hour clock
-# example does not use 24hr clock - check modules for am/pm options
-# changed for loop to if/else it wasn't working for a.m.
+# Hour - adjusted as 12 hour clock needed
 hour = datetime.today().hour
 hr = ""
 
@@ -90,23 +81,17 @@ else:
     hr = hour
 
 # Minute
-# just realised single digit minutes print as 3:5 instead of 3:05
-# added an if statement to concatenate 0 to minutes under 10.
 minute = datetime.today().minute
 min = str(minute)
 
 if minute in range(0, 10):
-    min = "0" + min
+    min = "0" + min     # single digit minutes need a 0 prefix
 
-# To add a.m. or p.m. to the end of the string.
-# Between the hours of 00:00 to 11:59, it should add a.m. All other times should add p.m. 
-# Need to test this at different times
-# transition from am to pm works. Need to check pm to am
-
+# Adds a.m. or p.m. to the end of the string.
 if hour in range(0, 12):
     min += "am"
 else:
     min += "pm"
 
-
+# print complete string to console.
 print(d + ", " + m, dte, year, "at", str(hr) + ":" + min)
