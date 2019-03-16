@@ -78,7 +78,8 @@ This program asks the user to input a positive integer and tells the user whethe
 ### 6_second_string.py
 This program takes a user input string and returns every second word.
 * Import **string** module in order to use the **string.punctuation constant** later in the program.
-* Ask user to enter a string and save under variable *sentence*.
+* Import **getString** module from **pcinput.py**.
+* Ask user to enter a string using **getString** and save under variable *sentence*.
 * The **.split()** method with no parameter (default is white space) is applied to *sentence*, creating a **list** of the words in *sentence*. This is list is named *words*.
 * An empty **list** is created, named *list_sentence*, to store every second item in the *words* list and the variable *index* is created and set to 0, which allows the **for loop** to mimic iterating through each index of the list.
 * A **for loop** is used to iterate through every item (*w*) in *words*. The program needs to return the first word (*index* 0 at first iteration) and every second word after that (index 2, 4, 6, etc.). Thus the **modulo operator** is used. If the modulo of *index* divided by 2 is zero, the word is added to *list_sentence* using the **.append()** method. 1 is then added to *index* for the next item.
