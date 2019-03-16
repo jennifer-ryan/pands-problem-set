@@ -15,7 +15,7 @@ while i <= 1:
         print("That is not a positive integer -- please try again.")
         i = getInteger("Please enter a positive integer: ")
 
-# Variable not_prime created to have a number added to it whenever the modulo is 0.
+# Variable not_prime created to have a number added to it whenever the modulo of the for loop is 0.
 not_prime = 0
 
 # For a prime number, the modulo of every number between 2 and i-1 divided into i should never be 0.
