@@ -5,13 +5,13 @@
 # Help from this video https://www.youtube.com/watch?v=qjdeQ83T9sQ 
 # and this stack overflow question https://stackoverflow.com/questions/32470543/open-file-in-another-directory-python
 # https://stackoverflow.com/questions/42040072/how-do-i-read-selected-lines-from-a-text-file-with-python
-# Starting by learning how to open a text file
 
+# daffodils.txt in folder for testing purposes
 
 # user will need to input path to file if it is not located in same folder they are running the code from. 
-# Below will be string user input eventually. Currently only works with file in same folder 
-# daffodils.txt added to folder
-          
+
+# Ask user to enter file name.
+# Will only work if file is in same folder.          
 txt_file = input("Please enter a text file name: ")
 
 # open the file
