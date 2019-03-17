@@ -71,12 +71,14 @@ else:
 # Year
 year = datetime.today().year
 
-# Hour - adjusted as 12 hour clock needed
+# Hour 
 hour = datetime.today().hour
 hr = ""
 
 if hour in range(13, 24):
-    hr = hour - 12
+    hr = hour - 12 # accounting for 12 hour clock
+elif hour == 0: 
+    hr = 12 # accounting for 0 hour
 else: 
     hr = hour
 
