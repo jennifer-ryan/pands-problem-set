@@ -23,7 +23,7 @@ while i > 1:
     if i % 2 == 0:              # even number
         i = i/2                 # divide by 2         
         num_list.append(int(i)) # add to list - int to remove decimal
-    elif i % 2 == 1:            # odd number
+    else:            # odd number
         i = (i * 3) + 1         # multiply by 3 and add 1
         num_list.append(int(i)) # add to list - int to remove decimal
 
