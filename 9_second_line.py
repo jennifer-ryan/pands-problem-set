@@ -1,8 +1,9 @@
 # Problem: Write a program that reads in a text file and outputs every second line. The program should take the filename from an argument on the command line.
 
+# Contemplated trying to write code taking a path as the input (so file does not need to be in same folder) but problem only requires filename
+
 # Help from this video https://www.youtube.com/watch?v=qjdeQ83T9sQ 
-# and this stack overflow question https://stackoverflow.com/questions/32470543/open-file-in-another-directory-python
-# https://stackoverflow.com/questions/42040072/how-do-i-read-selected-lines-from-a-text-file-with-python
+# and this stack overflow question https://stackoverflow.com/a/42040147
 
 # daffodils.txt in folder for testing purposes
 
