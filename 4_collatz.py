@@ -9,11 +9,6 @@ from pcinput import getInteger
 
 i = getInteger("Please enter a positive integer: ")
 
-# Ensure i is positive.
-while i < 0:
-    print("That is not a positive integer -- please try again.")
-    i = getInteger("Please enter a positive integer: ")
-
 # i added to list num_list, which will contain the sequence of numbers for the final output.
 num_list = [i]
 
