@@ -1,11 +1,12 @@
 # Write a program that displays a plot of the functions x, x**2 and 2**x in the range [0, 4].
 
 # Matplotlib tutorial https://matplotlib.org/users/pyplot_tutorial.html  
-# help from this example: https://stackoverflow.com/a/46726953 
+# Help from this example: https://stackoverflow.com/a/46726953 
 # y = f(x) https://www.youtube.com/watch?v=2-dUHLHeyTY so y values will be each function (x, x**2 and 2**x) 
 
 # import matplotlib in order to produce a graph.
 import matplotlib.pyplot as plt
+
 # x values
 x = [0, 1, 2, 3, 4]
 
