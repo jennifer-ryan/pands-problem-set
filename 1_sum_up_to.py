@@ -5,13 +5,6 @@ from pcinput import getInteger
 
 i = getInteger("Please enter a positive integer: ")
 
-# getInteger does not check for negative numbers. i needs to be a positive integer only.
-# Using a while loop that only breaks when a positive integer is entered.
-# Help from https://stackoverflow.com/a/39855435
-while i < 0:
-    print("That is not a positive integer -- please try again.")
-    i = getInteger("Please enter a positive integer: ")
-
 # Using a for loop to get the sum of numbers.
 # Need range from 1 to i + 1 in order to include the user input as the range() function takes you up to but does not include the second number.
 # Set variable answer to zero then work through each iteration, adding to answer at end of each loop
