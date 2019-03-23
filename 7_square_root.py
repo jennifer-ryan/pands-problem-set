@@ -8,11 +8,6 @@ from pcinput import getFloat
 
 i = getFloat("Please enter a positive number: ")
 
-# Ensure i is positive
-while i < 0:
-    print("That is not a positive number -- please try again.")
-    i = getFloat("Please enter a positive number: ")
-
 # Formats s so there is only 1 decimal place.
 s = round(sqrt(i), 1)
 
