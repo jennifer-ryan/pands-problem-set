@@ -1,15 +1,16 @@
-# Trying problem 8 again with a simpler method using strftime
-
-# Write a program that outputs today’s date and time in the format 
-# "Monday, January 10th 2019 at 1:15pm". %-d %Y %-I %-M %p
-
+# Import datetime to get access to date and time
 import datetime as dt 
 
-# function created from original datetime solution
+# Broken into 2 variables to add correct suffix for the date in the middle
+# first returns day, month, date
+first = dt.datetime.strftime(dt.datetime.now(), "%A, %B %#d") # Windows formatting uses '#' instead of '-' https://stackoverflow.com/a/2073189
+# second returns year and time
+second = dt.datetime.strftime(dt.datetime.now(),"%Y at %#I:%M")
+
+# Function suffix() created from original datetime solution to get suffixes for the date ('st', 'nd', 'rd' or 'th')
 def suffix():
     date = dt.datetime.today().day
     suf = ""
-
     if date == 1 or date == 21 or date == 31:
         suf = "st"  
     elif date == 2 or date == 22:
@@ -20,10 +21,15 @@ def suffix():
         suf = "th" 
     return suf     
 
+# Cannot get %p in strftime to print am/pm as lowercase on Windows so wrote function below for this, based on what was written in first solution
+def ampm():
+    hour = dt.datetime.today().hour
+    end = ""
+    if hour in range(0, 12):
+        end = "am"
+    else:
+        end = "pm"
+    return end    
 
-# Using # instead of - for windows formatting https://stackoverflow.com/a/2073189
-# broken into 2 variables to add correct suffix in the middle
-first = dt.datetime.strftime(dt.datetime.now(), "%A, %B %#d") 
-second = dt.datetime.strftime(dt.datetime.now(),"%Y at %#I:%M%p")
-
-print (first+suffix(), second)
+# Concatenate within print function to print whole string to console
+print (first+suffix(), second+ampm())
