@@ -3,7 +3,7 @@
 # Indexing of days in datetime.
 # Similar to tuesday.py from week 1 lecture.
 
-# Import datetime module which determines the day of the week.
+# Import datetime module which determines the current day of the week.
 import datetime
 
 # The only days that begin with T are Tuesday (index 1 in datetime) and Thursday (index 3 in datetime).
