@@ -1,11 +1,8 @@
 # Write a program that displays a plot of the functions x, x**2 and 2**x in the range [0, 4].
 
-# Matplotlib tutorial https://matplotlib.org/users/pyplot_tutorial.html
-# plt.plot(x values, y values)
-# x values are range[0, 4] - does this want me to include no. 4? range is within square (list) brackets rather than parentheses so I will include no. 4.  
-# # y = f(x) https://www.youtube.com/watch?v=2-dUHLHeyTY so y values will be each function (x, x**2 and 2**x) 
-
+# Matplotlib tutorial https://matplotlib.org/users/pyplot_tutorial.html  
 # help from this example: https://stackoverflow.com/a/46726953 
+# y = f(x) https://www.youtube.com/watch?v=2-dUHLHeyTY so y values will be each function (x, x**2 and 2**x) 
 
 # import matplotlib in order to produce a graph.
 import matplotlib.pyplot as plt
