@@ -6,15 +6,11 @@ from pcinput import getInteger
 
 i = getInteger("Please enter a positive integer: ")
 
-# Ensure i is both greater than 1 and positive.
-while i <= 1:
-    if i == 1: # mathematically 1 itself is not a prime number. Output such and end the program.
-        print("This is not a prime number.") 
-        exit()
-    else:
-        print("That is not a positive integer -- please try again.")
-        i = getInteger("Please enter a positive integer: ")
-
+# Ensure i is greater than 1 as mathematically 1 itself is not a prime number. Output such and end the program.
+if i == 1: 
+    print("This is not a prime number.") 
+    exit()
+    
 # Variable not_prime created to have a number added to it whenever the modulo of the for loop is 0.
 not_prime = 0
 
