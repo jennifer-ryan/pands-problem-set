@@ -77,14 +77,15 @@ This program asks the user to input a positive integer and tells the user whethe
 
 ### 6_second_string.py
 This program takes a user input string and returns every second word.
-* Import **string** module in order to use the **string.punctuation constant** later in the program.
+* Import **re** module in order to use search and replace to remove punctuation from words.
 * Import **getString** module from **pcinput.py**.
 * Ask user to enter a string using **getString** and save under variable *sentence*.
 * The **.split()** method with no parameter (default is white space) is applied to *sentence*, creating a **list** of the words in *sentence*. This is list is named *words*.
-* An empty **list** is created, named *list_sentence*, to store every second item in the *words* list and the variable *index* is created and set to 0, which allows the **for loop** to mimic iterating through each index of the list.
+* An empty **list** is created, named *list_second*, to store every second item in the *words* list and the variable *index* is created and set to 0, which allows the **for loop** to mimic iterating through each index of the list.
 * A **for loop** is used to iterate through every item (*w*) in *words*. The program needs to return the first word (*index* 0 at first iteration) and every second word after that (index 2, 4, 6, etc.). Thus the **modulo operator** is used. If the modulo of *index* divided by 2 is zero, the word is added to *list_sentence* using the **.append()** method. 1 is then added to *index* for the next item.
-* *list_sentence* is converted back to a string using the **.join()** method with " " to input white space as the joiner. This is named *string_sentence*.
-* *string_sentence* contains punctuation as part of each word. In order to remove punctuation, a **for loop** is used to iterate through each character in *string_sentence*. The **string.punctuation constant** is used to determine whether a character is considered punctuation. If it is not, the character is added to the empty variable *final_sentence*, which is then printed to the console.
+* *list_second* is converted to a string using the **.join()** method with " " to input white space as the joiner. This is named *string_sentence*.
+* *string_sentence* contains punctuation as part of each word (i.e. commas and full-stops will be considered part of the word preceding them) which should be removed. However, some words will have an apostrophe (they're, we're, etc.) so this punctuation will need to be kept. In order to remove unwanted punctuation, **re.sub** is applied to *string_sentence* and replaces anything that is not an uppercase or lowercase letter, an apostrophe or a space with nothing (''). 
+* The output of using **re.sub** is named *final_sentence*, which is printed to the console.
 
 ### 7_square_root.py
 This program asks the user to enter a positive floating number and returns an approximation of the square root.
