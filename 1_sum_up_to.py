@@ -1,6 +1,6 @@
 # Problem: Write a program that asks the user to input any positive integer and outputs the sum of all numbers between one and that number.
 
-# Import getInteger function from pcinput.py to ensure input is an integer. Set value to variable i.
+# Import getInteger function from pcinput.py to ensure input is a positive integer. Set value to variable i.
 from pcinput import getInteger
 
 i = getInteger("Please enter a positive integer: ")
