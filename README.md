@@ -96,15 +96,13 @@ This program asks the user to enter a positive floating number and returns an ap
 
 ### 8_datetime.py
 This program outputs today's date and time in the format: "Sunday, March 3rd 2019 at 1:40pm".
-* **datetime** imported from **datetime** to determine today's date. 
-* Day: **datetime.today().weekday()** provides the day of the week and this is saved to variable *day*. This encodes each day as a number between 0 and 6. **if/elif statements** are used to convert the weekday number (0, 1, 2...) to a string (Monday, Tuesday, Wedneday...) which is saved to variable *d*.
-* Month: **datetime.today().month** provides the month and this is saved to variable *month*. This encodes each month as a number between 1 and 12. **if/elif statements** are used to convert the month number (1, 2, 3...) to a string statement (January, February, March...) which is saved to variable *m*.
-* Date: **datetime.today().day** provides the date and this is saved to the variable *date*. In order to get each date with the appropriate suffix for the string (st, nd, rd, th), **if.elif statements** are used wo determine the appropriate suffix for each number. The date is converted to a string and concatenated to the suffix and saved as variable *dte*.
-* Year: **datetime.today().year** provides the year directly. This s saved to the variable *year*.
-* Hour: **datetime.today().hour** provides the hour portion of the time in 24 hour format and this is saved to the variable *hour*. The output requires 12 hour format so an **if/else statement** is used to convert the hours in the **range()** 13:00 to 23:00 inclusive into 12 hour format by subtracting 12. Hours outside of this range remain unchanged. This is saved as a string in the variable *hr*.
-* Minute: **datetime.today().minute** provides the minutes portion of the time and is saved to the variable *minute*. An **if statement** addresses minutes in the **range()** 0 to 9 inclusive and concatenates a zero in front as these are originally returned as single digits. Minutes are saved in string format in the variable *min*. 
-* AM/PM: In order to add am and pm to the time, an **if/else statement** is used and if the *hour* portion of the time is in the **range()** 0 to 11 inclusive, the suffix am is concatenated to the *min* variable. Otherwise the suffix pm is concatenated. 
-* The final print statement joins all of the variables created and punctuation into a string.  
+* **datetime** imported as **dt** to determine today's date and to access **strftime**. 
+* Two variables created, *first* and *second*, which contain two separate halves of the final string. This allows the correct suffixes to be added to the date in the middle (st, nd, rd, th).
+* Using **strftime**, *first* contains the day (%A), month (%B) and date (%#d). The # in %#d returns a single digit for dates less than 10 rather than the default %d, which has a leading 0 for single digit dates (i.e. 01, 02, 03, etc.).
+* Using **strftime**, *second* contains the year(%Y) and time (Hour %#I and minute %M). As with the date, we do not want the leading 0 in the hour portion of the time so again the # is used. It is not used in the minute portion as we want the 0 in this case.
+* The **function** *suffix()* is created to add the correct suffix to the date (st, nd, rd, th). dt.datetime.today().day provides the current date and this is saved to the variable *date*.**if/elif/else statements** are used to determine the appropriate suffix for each date, which is then returned as the variable *suf*.
+* **strftime** allows the addition of AM or PM to the end of the time (%p) but, in Windows, does not allow this to be changed to lowercase as required in the final output. To fix this, the **function** *ampm()* is created to add the correct suffix to the end of the statement. dt.datetime.today().hour provides the current hour and is saved to the variable *hour*. An **if/else statement** is used to determine the correct suffix. The variable *hour* uses the 24 hour format so if *hour* is between 0 and 11 inclusive, the suffix should be 'am', otherwise it should be 'pm'. The function returns the appropriate suffix in the variable *end*. 
+* The final **print** statement concatenates the variable to the functions to create the final string output.
 
 ### 9_second_line.py
 This program reads in a text file and outputs every second line.
