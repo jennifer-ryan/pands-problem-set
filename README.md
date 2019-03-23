@@ -13,7 +13,7 @@ This repository contains my solutions to ten problems that comprise part of my f
 ## How to Run the Code:
 1. Make sure you have Python installed on your machine. If you do not and are interested in data science, I recommend [Anaconda](https://www.anaconda.com/distribution/) as it contains many packages that work with Python and porting for all popular Python libraries.
 2. On the command line, go to the directory that contains the unzipped download for [pands-problem-set](https://github.com/jennifer-ryan/pands-problem-set) or use GitHub Desktop.
-3. If using the command line, enter *python* followed by the name of the program you wish to run, e.g. *1_sum_up_to.py*
+3. If using the command line, enter *python* followed by the name of the program you wish to run, e.g. *python 1_sum_up_to.py*
 
 
 ## External Module Used for User Input:
