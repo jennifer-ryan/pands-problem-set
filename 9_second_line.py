@@ -1,18 +1,17 @@
 # Problem: Write a program that reads in a text file and outputs every second line. The program should take the filename from an argument on the command line.
 
-# Contemplated trying to write code taking a path as the input (so file does not need to be in same folder) but problem only requires filename
+# Help from this video https://www.youtube.com/watch?v=qjdeQ83T9sQ and this stack overflow question https://stackoverflow.com/a/42040147
 
-# Help from this video https://www.youtube.com/watch?v=qjdeQ83T9sQ 
-# and this stack overflow question https://stackoverflow.com/a/42040147
+# daffodils.txt is in the repository for testing purposes. 
 
-# daffodils.txt in folder for testing purposes
+# Required to get filename from an argument on the command line so import sys to use sys.argv
+import sys
 
-# Ask user to enter file name.
-# Will only work if file is in same folder.          
-txt_file = input("Please enter a text file name: ")
+# Open the file located at index 1 in sys.argv
+# Works with files in same folder and paths also
+# Note: since space is the delimiter for command line arguments, the path needs to be enclosed in quotes if it contains spaces https://stackoverflow.com/a/37718627
+with open(sys.argv[1]) as f:
 
-# Open the file. Lecture https://web.microsoftstream.com/video/72484dfc-1b50-4223-8039-bd6a69cab573
-with open(txt_file) as f: 
     # Using .readlines() method to access individual lines https://stackoverflow.com/a/42040147
     # It creates a list with each line as a separate item on the list
     lines = f.readlines()
