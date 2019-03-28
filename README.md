@@ -105,14 +105,14 @@ This program outputs today's date and time in the format: "Sunday, March 3rd 201
 * The final **print** statement concatenates the variable to the functions to create the final string output.
 
 ### 9_second_line.py
-This program reads in a text file and outputs every second line.
-* The user is asked to enter the name of a text file. This is saved as the variable *txt_file*.
+This program reads in a text file and outputs every second line. The filename must be taken from an argument on the command line.
 * The text file *daffodils.txt* has been included in the repository to test this code.
-* File is opened using **open()** and saved to the variable *f*.
+* The module **sys** is imported to use **sys.argv**, which will allow the program to access the file/path entered as an argument on the command line i.e. the command *python 9_second_line.py daffodils.txt* should allow the program to access the file *daffodils.txt*. 
+* The file is opened using the **with** keyword, which will automatically close the file once the program is complete. 
+* The **open() function** accesses index 1 of **sys.argv**, which contains the filename/path and this is saved to the variable *f*.
 * To access each individual line, the **readlines()** method is used. This creates a list that contains each line as a separate item in the list, allowing the program to iterate through them later. This list is named *lines*.
 * To remove empty lines, a **for loop** iterates through each item in *lines* and an **if statement** removes any blank lines from the list.
 * To return every second line of the text file, a **for loop** is used to access the index of every second item in *lines*. The loop iterates through a range from 0 up to the number of items in *lines* in increments of 2. These lines are then printed to the console.
-* The file is closed using **close()**.
 
 ### 10_plot.py
 This program displays a plot of the functions x, x<sup>2</sup> and 2<sup>x</sup> in the range [0, 4].
