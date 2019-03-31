@@ -1,8 +1,5 @@
 # Problem: Write a program that outputs whether or not today is a day that begins with the letter T. 
 
-# Indexing of days in datetime.
-# Similar to tuesday.py from week 1 lecture.
-
 # Import datetime module which determines the current day of the week.
 import datetime
 
