@@ -10,27 +10,27 @@ import matplotlib.pyplot as plt
 # x values
 x = [0, 1, 2, 3, 4]
 
-# first function is the same as x
+# First function is the same as x.
 y1 = x
 
-# using a for loop to get each function for below y list values
-# second function is x**2
+# Using a for loop to get each function for below y list values.
+# Second function is x**2.
 y2 = []
 for i in x:
     i = i ** 2
     y2.append(i)
 
-# third function is 2**x
+# Third function is 2**x.
 y3 = []
 for i in x:
     i = 2 ** i
     y3.append(i)
 
-# building plots below
+# Building plots below.
 plt.plot(x, y1)
 plt.plot(x, y2)
 plt.plot(x, y3)
 
-# to display the graph
+# To display the graph.
 plt.show()
-# outputs the 3 different plotlines on one graph.
+# Outputs the 3 different plotlines on one graph.
