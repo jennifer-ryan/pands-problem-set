@@ -7,10 +7,10 @@
 # Required to get filename from an argument on the command line so import sys to use sys.argv
 import sys
 
-# Open the file located at index 1 in sys.argv
-# Works with files in same folder and paths also
+# Open the file located at index 1 in sys.argv.
+# Works with files in the same folder as well as paths.
 # Note: since space is the delimiter for command line arguments, the path needs to be enclosed in quotes if it contains spaces https://stackoverflow.com/a/37718627
-with open(sys.argv[1]) as f:
+with open(sys.argv[1]) as f: # with keyword automatically closes file when the program ends.
 
     # Using .readlines() method to access individual lines https://stackoverflow.com/a/42040147
     # It creates a list with each line as a separate item on the list
