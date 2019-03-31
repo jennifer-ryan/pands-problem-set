@@ -1,9 +1,10 @@
 # Problem: Write a program that asks the user to input a positive integer and tells the user whether or not the number is a prime.
 # Prime numbers: Greater than 1. Only factors are 1 and itself. 
 
-# Import getInteger to get user input and set to variable i.
+# Import getInteger function from pcinput.py to ensure input is a positive integer. 
 from pcinput import getInteger
 
+# Prompt user to enter a positive integer and set value to variable i.
 i = getInteger("Please enter a positive integer: ")
 
 # Ensure i is greater than 1 as mathematically 1 itself is not a prime number. Output such and end the program.
