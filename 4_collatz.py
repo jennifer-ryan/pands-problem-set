@@ -4,12 +4,13 @@
 # if it is even, divide it by two, but if it is odd, multiply it by three and add one. 
 # Have the program end if the current value is one.
 
-# Import getInteger to get user input and set to variable i.
+# Import getInteger function from pcinput.py to ensure input is a positive integer. 
 from pcinput import getInteger
 
+# Prompt user to enter a positive integer and set value to variable i.
 i = getInteger("Please enter a positive integer: ")
 
-# i added to list num_list, which will contain the sequence of numbers for the final output.
+# i is added to the list num_list, which will contain the sequence of numbers for the final output.
 num_list = [i]
 
 # Collatz conjecture states that any series of numbers created from the 2 calculations will end in 1, no matter the value of i
@@ -18,7 +19,7 @@ while i > 1:
     if i % 2 == 0:              # even number
         i = i/2                 # divide by 2         
         num_list.append(int(i)) # add to list - int to remove decimal
-    else:            # odd number
+    else:                       # odd number
         i = (i * 3) + 1         # multiply by 3 and add 1
         num_list.append(int(i)) # add to list - int to remove decimal
 
