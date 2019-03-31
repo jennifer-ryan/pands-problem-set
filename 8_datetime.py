@@ -5,13 +5,13 @@
 # Import datetime to get access to date and time
 import datetime as dt 
 
-# Broken into 2 variables to add correct suffix for the date in the middle
-# first returns day, month, date
+# Broken into 2 variables to add correct suffix for the date in the middle.
+# first returns string formatted day, month, date.
 first = dt.datetime.strftime(dt.datetime.now(), "%A, %B %#d") # Windows formatting uses '#' instead of '-' https://stackoverflow.com/a/2073189
-# second returns year and time
+# second returns string formatted year and time.
 second = dt.datetime.strftime(dt.datetime.now(),"%Y at %#I:%M")
 
-# Function suffix() created from original datetime solution to get suffixes for the date ('st', 'nd', 'rd' or 'th')
+# Function suffix() created from original datetime solution to get suffixes for the date ('st', 'nd', 'rd' or 'th').
 def suffix():
     date = dt.datetime.today().day
     suf = ""
